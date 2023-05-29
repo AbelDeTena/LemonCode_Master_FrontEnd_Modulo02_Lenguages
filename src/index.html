@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>02 Languages</title>
+  </head>
+  <body>
+    <header>
+      <div>
+        <h1>Laboratorio 02</h1>
+        <h2>Módulo Languages</h2>
+      </div>
+      <nav>
+        <a href="#exercise-1">Ejercicio 1</a>
+        <a href="#exercise-2">Ejercicio 2</a>
+        <a href="#exercise-3">Ejercicio 3</a>
+        <a href="#exercise-4">Ejercicio 4</a>
+        <a href="#exercise-5">Ejercicio 5</a>
+      </nav>
+    </header>
+    <main>
+      <article class="exercise-js" id="exercise-1">
+        <h3>Ejercicio 1: Array operations</h3>
+        <section>
+          <h4>Head</h4>
+          <p>
+            Implementa una función <b>head</b> (inmutable), tal que, dado un
+            array como entrada extraiga y devuelva su primer elemento.
+            <i>Utiliza <b>destructuring</b>.</i>
+          </p>
+          <pre><code class="language-javascript">const [head,] = myArray;</code></pre>
+          <form>
+            <label for="elements"
+              >Introducir los elementos separados por comas:</label
+            >
+            <input
+              type="text"
+              id="headElements"
+              name="elements"
+              placeholder="Valores por defecto: 1,2,3"
+            />
+            <button id="headButton" type="submit">Head</button>
+            <input type="text" id="headResult" />
+            <button type="submit" id="cleanHead">Limpiar</button>
+          </form>
+        </section>
+        <section>
+          <h4>Tail</h4>
+          <p>
+            Implementa una función <b>tail</b> (inmutable), tal que, dado un
+            array como entrada devuelta todos menos el primer elemento.<i>
+              Utiliza <b>rest operator</b>.</i
+            >
+          </p>
+          <pre>
+            <code class="language-javascript">const [head, ...tail] = myArray;</code></pre>
+          <form>
+            <label for="elements"
+              >Introducir los elementos separados por comas:</label
+            >
+            <input
+              type="text"
+              id="tailElements"
+              name="elements"
+              placeholder="Valores por defecto: 1,2,3"
+            />
+            <button id="tailButton" type="submit">Tail</button>
+            <input type="text" id="tailResult" />
+            <button type="submit" id="cleanTail">Limpiar</button>
+          </form>
+        </section>
+        <section>
+          <h4>Init</h4>
+          <p>
+            Implementa una función <b>init</b> (inmutable), tal que, dado un
+            array como entrada devuelva todos los elementos menos el último.
+            <i>Utiliza los métodos que ofrece <b>Array.prototype</b>.</i>
+          </p>
+          <pre><code class="language-javascript">const init = myArray.slice(0,-1);</code></pre>
+          <form>
+            <label for="elements"
+              >Introducir los elementos separados por comas:</label
+            >
+            <input
+              type="text"
+              id="initElements"
+              name="elements"
+              placeholder="Valores por defecto: 1,2,3"
+            />
+            <button id="initButton" type="submit">Init</button>
+            <input type="text" id="initResult" />
+            <button type="submit" id="cleanInit">Limpiar</button>
+          </form>
+        </section>
+        <section>
+          <h4>Last</h4>
+          <p>
+            Implementa una función <b>last</b> (inmutable), tal que, dado un
+            array como entrada devuelva el último elemento.
+          </p>
+          <pre><code class="language-javascript">const last = myArray.slice(-1);</code></pre>
+          <form>
+            <label for="elements"
+              >Introducir los elementos separados por comas:</label
+            >
+            <input
+              type="text"
+              id="lastElements"
+              name="elements"
+              placeholder="Valores por defecto: 1,2,3"
+            />
+            <button id="lastButton" type="submit">last</button>
+            <input type="text" id="lastResult" />
+            <button type="submit" id="cleanLast">Limpiar</button>
+          </form>
+        </section>
+      </article>
+      <article class="exercise-js" id="exercise-2">
+        <h3>Ejercicio 2: Concat</h3>
+        <section class="section-dos">
+          <h4>Concat</h4>
+          <p>
+            Implementa una función <b>concat</b> (inmutable) tal que, dados 2
+            arrays como entrada, devuelva la concatenación de ambos.
+            <i>Utiliza <b>rest / spread operators</b>.</i>
+          </p>
+          <pre><code class="language-javascript">const concat = (a, b) => [...a, ...b];</code></pre>
+          <form>
+            <label for="elements">Primer Array:</label>
+            <input
+              type="text"
+              id="concatElements1"
+              name="elements"
+              placeholder="Valores por defecto: 1,2,3"
+            />
+            <label for="elements">Segundo Array:</label>
+            <input
+              type="text"
+              id="concatElements2"
+              name="elements"
+              placeholder="Valores por defecto: 1,2,3"
+            />
+            <button id="concatButton" type="submit">concat</button>
+            <input type="text" id="concatResult" />
+            <button type="submit" id="cleanConcat">Limpiar</button>
+          </form>
+        </section>
+        <section class="section-dos">
+          <h4>Concat optional</h4>
+          <p>
+            Implementa una versión del ejercicio anterior donde se acepten
+            múltiples arrays de entrada (más de 2).
+          </p>
+          <pre><code class="language-javascript">const optionalConcat = (...arrays) =>
+            arrays.reduce((acc, currentValue) => [...acc, ...currentValue], []);</code></pre>
+          <form>
+            <label for="elements">Primer Array:</label>
+            <input
+              type="text"
+              id="concatOptionalElements1"
+              name="elements"
+              placeholder="Valores por defecto: 1,2,3"
+            />
+            <label for="elements">Segundo Array:</label>
+            <input
+              type="text"
+              id="concatOptionalElements2"
+              name="elements"
+              placeholder="Valores por defecto: 1,2,3"
+            />
+            <label for="elements">Tercer Array:</label>
+            <input
+              type="text"
+              id="concatOptionalElements3"
+              name="elements"
+              placeholder="Valores por defecto: 1,2,3"
+            />
+            <button id="concatOptionalButton" type="submit">concat</button>
+            <input type="text" id="concatOptionalResult" />
+            <button type="submit" id="cleanConcatOptional">Limpiar</button>
+          </form>
+        </section>
+      </article>
+      <article class="exercise-js" id="exercise-3">
+        <h3>Ejercicio 3: Clone Merge</h3>
+        <section>
+          <h4>Clone</h4>
+          <p>
+            Implementa una función <b>clone</b> que, a partir de un objeto de
+            entrada <b>source</b> devuelva un nuevo objeto con las propiedades
+            de source.
+          </p>
+          <pre><code class="language-javascript">function clone(source) {return {...source}};</code></pre>
+          <button id="clone-button">Mostrar por consola</button>
+        </section>
+        <section>
+          <h4>Merge</h4>
+          <p>
+            Implementa una función <b>merge</b> que, dados dos objetos de
+            entrada <b>source</b> y <b>target</b>, devuelva un nuevo objeto con
+            todas las propiedades de target y de source , y en caso de
+            propiedades con el mismo nombre,
+            <b>source sobreescribe a target</b>.
+          </p>
+          <pre><code class="language-javascript">function merge(source, target){return {...target, ...source}}</code></pre>
+          <button id="merge-button">Mostrar por consola</button>
+        </section>
+      </article>
+      <article class="exercise-ts" id="exercise-4">
+        <h3>
+          Ejercicio 4 = Read Books:<span>Resuelto con Typescript</span> =>
+        </h3>
+        <section>
+          <h4>isBookRead</h4>
+          <p>
+            Crea una función <b>isBookRead</b> que reciba una lista de libros y
+            un titulo y devuelva si se ha leído o no dicho libro.
+            <b
+              >Un libro es un objeto con title como string y isRead como
+              booleano</b
+            >. En caso de no existir el libro devolver false.
+          </p>
+          <pre><code class="language-typescript">
+      //isBookRead
+
+      interface Book {
+      title: string;
+      isRead: boolean;
+      }
+
+        const books: Book[] = [  
+          { title: "Harry Potter y la piedra filosofal", isRead: true },
+          { title: "Canción de hielo y fuego", isRead: false },
+          { title: "Devastación", isRead: true },
+        ];
+
+        function isBookRead(books: Book[], titleToSearch: string): boolean {
+          return books.reduce((isRead: boolean, book: Book) => {
+            if (book.title === titleToSearch) {
+             return book.isRead;
+            }
+             return isRead;
+          }, false);
+        }
+
+      const bookSelect = document.getElementById("books") as HTMLSelectElement;
+      const bookButton = document.getElementById("isBookRead-button") as HTMLButtonElement;
+      const bookResult = document.getElementById("isBookReadResult") as HTMLInputElement;
+
+        bookButton.addEventListener("click", () => {
+          const selectedBook: string = bookSelect.value;
+          const result: boolean = isBookRead(books, selectedBook);
+          console.log(
+          `Ejercicio 4: isBookRead: Listado de libros${JSON.stringify(books)}, 
+          libro a buscar ${selectedBook}, resultado => ${result}`);
+          bookResult.value = result.toString();
+        });
+            </code></pre>
+          <select id="books">
+            <option value="Harry Potter y la piedra filosofal">
+              Harry Potter y la piedra filosofal
+            </option>
+            <option value="Canción de hielo y fuego">
+              Canción de hielo y fuego
+            </option>
+            <option value="Devastación">Devastación</option>
+          </select>
+          <button id="isBookRead-button">isBookRead</button>
+          <input type="text" id="isBookReadResult" />
+        </section>
+      </article>
+      <article class="exercise-ts" id="exercise-5">
+        <h3>
+          Ejercicio 5 = Slot Machine:<span>Resuelto con Typescript</span> =>
+        </h3>
+        <section>
+          <h4>class SlothMachine</h4>
+          <p>
+            El objetivo de este ejercicio es crear una máquina tragaperras
+            <b>ulizando clases</b> donde cada vez que juguemos insertemos una
+            moneda. Cada máquina tragaperras (instancia) tendrá un contador de
+            monedas que automácamente se irá incrementando conforme vayamos
+            jugando. Cuando se llame al <b>método play</b> el número de monedas
+            se debe incrementar de forma automática y debe generar tres
+            booleanos aleatorios que representarán el estado de las 3 ruletas.
+            El usuario habrá ganado en caso de que los tres booleanos sean true
+            , y por tanto deberá mostrarse por consola el mensaje:
+            <i>"Congratulations!!!. You won "número de monedas" coins!!"</i> y
+            reiniciar las monedas almacenadas, ya que las hemos conseguido y han
+            salido de la máquina. En caso contrario deberá mostrar otro mensaje:
+            <i>"Good luck next time!!"</i>.
+          </p>
+          <pre><code class="language-typescript">
+      //SlothMachine
+
+      class SlothMachine {
+        //variables
+        private coin: number = 0;
+
+        //methods
+        private rule(): boolean {
+          return Math.random() < 0.5 ? true : false;
+        }
+      
+        private spin(): boolean[] {
+          return [this.rule(), this.rule(), this.rule()];
+        }
+      
+        public play(): void {
+          this.coin += 1;
+          const spin = this.spin();
+      
+          console.log(this.coin, spin);
+          if (spin.every((element) => element === true)) {
+            const text = `Congratulations!!! You won ${
+              this.coin > 1 ? this.coin + " coins!!" : this.coin + " coin!!"
+            }`;
+            result.value = text;
+            console.log(text);
+            this.coin = 0;
+          } else {
+            const text = "Good luck next time!!";
+            result.value = text;
+            console.log(text);
+          }
+        }
+      }
+      
+      const coin = document.getElementById("insertCoin-button") as HTMLButtonElement;
+      
+      const result = document.getElementById(
+        "SlothMachineResult"
+      ) as HTMLInputElement;
+      
+      const machine1 = new SlothMachine();
+      coin.addEventListener("click", machine1.play.bind(machine1));
+      
+            </code></pre>
+          <button id="insertCoin-button">Insert Coin</button>
+          <input type="text" id="SlothMachineResult" />
+        </section>
+      </article>
+    </main>
+  </body>
+</html>

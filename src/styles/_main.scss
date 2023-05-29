@@ -1,0 +1,54 @@
+@import "./commons";
+
+main {
+  background-color: $lightColor;
+  article.exercise-js {
+    @include article-style;
+    section {
+      @include section-style;
+      pre {
+        @include box-code-style;
+      }
+      form {
+        padding: 16px 0px;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 16px;
+        justify-content: space-between;
+        input {
+          width: 200px;
+        }
+        button {
+          width: 80px;
+        }
+      }
+      &:nth-child(even) {
+        transform: translateX(-100%);
+        animation: slideInLeft 2s linear forwards;
+      }
+      &:nth-child(odd) {
+        transform: translateX(100%);
+        animation: slideInRight 2s linear forwards;
+      }
+    }
+  }
+  article.exercise-ts {
+    @include article-style;
+    section {
+      @include section-style;
+      pre {
+        @include box-code-style;
+        overflow-x: scroll;
+      }
+    }
+    h3 {
+      padding: 1em;
+      background-color: $secundaryColor;
+      color: white;
+      border-radius: 16px;
+      span {
+        color: $accentColor;
+      }
+    }
+  }
+}
